@@ -1,0 +1,117 @@
+@import url(/css/reset.css);
+
+body {
+  background-color: rgb(101, 119, 122);
+}
+
+.container-head {
+  width: 40rem;
+  margin: auto;
+  margin-top: 160px;
+  height: 6rem;
+  background-color: rgb(243, 224, 224);
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px black;
+  display: flex;
+  justify-content: space-between;
+}
+.container-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+  border-bottom: 1.5px solid black;
+  height: 6rem;
+  box-sizing: border-box;
+}
+.logo {
+  font-size: 3rem;
+  color: rgb(6, 34, 6);
+}
+.container-display {
+  width: 20rem;
+  height: 6rem;
+  box-sizing: border-box;
+  border: 1rem solid black;
+  background-color: rgb(82, 73, 73);
+  border-radius: 5px;
+
+  padding-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.display-numbers {
+  color: rgb(219, 219, 110);
+  font-size: 2.5rem;
+}
+
+.container-center {
+  margin: auto;
+  width: 40rem;
+  height: 0px;
+  border-right: 3rem solid transparent;
+  border-left: 3rem solid transparent;
+  border-bottom: 15rem solid rgb(243, 224, 224);
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+}
+
+.container-ticket {
+  width: 20rem;
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ticket {
+  width: 5rem;
+  background-color: rgb(225, 231, 236);
+  margin-top: 3rem;
+  height: 4.5rem;
+  text-align: center;
+  padding-top: 2rem;
+  border: 1px solid black;
+}
+.off-ticket {
+  width: 7rem;
+  height: 1.2rem;
+  background-color: black;
+  border-radius: 10px;
+  margin-top: -5px;
+  margin-bottom: 5.5rem;
+}
+
+.container-keys {
+  width: 20rem;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.keys {
+  display: grid;
+  grid-template-columns: 4rem 4rem 4rem 4rem;
+  gap: 5px;
+}
+
+.math {
+  font-size: 1rem;
+}
+@media (max-width: 850px) {
+  :root {
+    font-size: 12px;
+  }
+}
+@media (max-width: 650px) {
+  :root {
+    font-size: 8px;
+  }
+}
+@media (max-width: 450px) {
+  :root {
+    font-size: 6px;
+  }
+}
