@@ -138,9 +138,9 @@ body {
 .container-footer-bottom {
   width: 49rem;
   height: 0;
-  border-right: 0.8rem solid transparent;
-  border-left: 0.8rem solid transparent;
-  border-bottom: 4rem solid rgb(88, 78, 78);
+  border-right: calc(0.8rem * 1.8) solid transparent;
+  border-left: calc(0.8rem * 1.8) solid transparent;
+  border-bottom: calc(4rem) solid rgb(88, 78, 78);
   margin-top: -0.9rem;
   z-index: -1;
   border-radius: 0.3125rem;
@@ -149,7 +149,7 @@ body {
 .container-footer-footer {
   display: flex;
   flex-direction: column;
-  width: 50.5rem;
+  width: 52rem;
   height: 7rem;
   background-color: rgb(88, 78, 78);
 
