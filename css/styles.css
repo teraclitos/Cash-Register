@@ -6,6 +6,8 @@
 
 body {
   background-color: rgb(101, 119, 122);
+  height: 200vh;
+  padding-top: 3rem;
 }
 
 .container {
@@ -202,10 +204,6 @@ body {
 @media (max-width: 650px) {
   :root {
     font-size: 8px;
-  }
-  body {
-    height: 200vh;
-    padding-top: 3rem;
   }
 }
 @media (max-width: 450px) {
