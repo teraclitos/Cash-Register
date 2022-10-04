@@ -13,7 +13,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 .container-head {
   width: 40rem;
@@ -129,7 +129,7 @@ body {
   border-radius: 0.625rem;
   background-color: rgb(243, 224, 224);
   box-shadow: 0.0625rem 0.0625rem 0.0625rem 0.125rem rgb(58, 56, 56);
-  margin-top: 0.3rem;
+  margin-top: 0.15rem;
 }
 
 .container-footer-bottom {
