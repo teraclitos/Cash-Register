@@ -32,19 +32,28 @@
               <button onclick="number(7)" class="math siete">7</button>
               <button onclick="number(8)" class="math ocho">8</button>
               <button onclick="number(9)" class="math nueve">9</button>
-              <button class="math suma">+</button>
+              <button onclick="operations(`suma`)" class="math suma">+</button>
               <button onclick="number(4)" class="math cuatro">4</button>
               <button onclick="number(5)" class="math cinco">5</button>
               <button onclick="number(6)" class="math seis">6</button>
-              <button class="math resta">-</button>
+              <button onclick="operations(`resta`)" class="math resta">
+                -
+              </button>
               <button onclick="number(1)" class="math uno">1</button>
               <button onclick="number(2)" class="math dos">2</button>
               <button onclick="number(3)" class="math tres">3</button>
-              <button class="math multiplicacion">*</button>
+              <button
+                onclick="operations(`multiplicacion`)"
+                class="math multiplicacion"
+              >
+                *
+              </button>
               <button onclick="deleteNumbers()" class="math reset">AC</button>
               <button onclick="number(0)" class="math cero">0</button>
-              <button class="math igual">=</button>
-              <button class="math division">/</button>
+              <button onclick="result()" class="math igual">=</button>
+              <button onclick="operations(`division`)" class="math division">
+                /
+              </button>
             </div>
           </div>
         </div>

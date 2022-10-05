@@ -2,7 +2,8 @@ const initialValueDisplay = () => {
   document.getElementById("display").innerText = `0`;
 };
 
-arrayNumber = [];
+let arrayNumber = [];
+let arrayOperations = [];
 
 const number = (number) => {
   const display = document.getElementById("display");
@@ -14,9 +15,51 @@ const number = (number) => {
   }
 };
 
-const deleteNumbers = () => {
+const operations = (operacion) => {
+  switch (operacion) {
+    case `suma`:
+      arrayNumber.push("+");
+      arrayOperations.push(arrayNumber.join(""));
+      arrayNumber = [];
+      initialValueDisplay();
+      break;
+    case `resta`:
+      arrayNumber.push("-");
+      arrayOperations.push(arrayNumber.join(""));
+      arrayNumber = [];
+      initialValueDisplay();
+      break;
+    case `multiplicacion`:
+      arrayNumber.push("*");
+      arrayOperations.push(arrayNumber.join(""));
+      arrayNumber = [];
+      initialValueDisplay();
+      break;
+
+    default:
+      arrayNumber.push("/");
+      arrayOperations.push(arrayNumber.join(""));
+      arrayNumber = [];
+      initialValueDisplay();
+      break;
+  }
+};
+
+const result = () => {
   const display = document.getElementById("display");
+  arrayOperations.push(arrayNumber.join(""));
+
+  let total = arrayOperations.join("");
+
+  console.log(typeof total);
+  display.innerHTML = total;
   arrayNumber = [];
+};
+
+const deleteNumbers = () => {
+  arrayNumber = [];
+  arrayOperations = [];
+
   initialValueDisplay();
 };
 
