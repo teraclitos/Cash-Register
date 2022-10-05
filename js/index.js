@@ -3,7 +3,12 @@ const initialValueDisplay = () => {
 };
 
 let arrayNumber = [];
-let arrayOperations = [];
+let calc = 0;
+let sum = 0;
+let substraction = 0;
+let multiplicacion = 0;
+let division = 0;
+let boolSum = false;
 
 const number = (number) => {
   const display = document.getElementById("display");
@@ -18,27 +23,35 @@ const number = (number) => {
 const operations = (operacion) => {
   switch (operacion) {
     case `suma`:
-      arrayNumber.push("+");
-      arrayOperations.push(arrayNumber.join(""));
+      sumRep = sum;
+      if (boolSum === true) {
+        sum = sumRep + parseFloat(arrayNumber.join(""));
+      } else {
+        (sum = sumRep + calc + parseFloat(arrayNumber.join("")))
+          ? Number.isNaN(parseFloat(arrayNumber.join(""))) === false
+          : (sum = sumRep + calc);
+      }
+
       arrayNumber = [];
       initialValueDisplay();
+      boolSum = true;
       break;
-    case `resta`:
-      arrayNumber.push("-");
-      arrayOperations.push(arrayNumber.join(""));
-      arrayNumber = [];
-      initialValueDisplay();
-      break;
-    case `multiplicacion`:
-      arrayNumber.push("*");
-      arrayOperations.push(arrayNumber.join(""));
-      arrayNumber = [];
-      initialValueDisplay();
-      break;
+    // case `resta`:
+    //   arrayNumber.push("-");
+    //   calc.push(arrayNumber.join(""));
+    //   arrayNumber = [];
+    //   initialValueDisplay();
+    //   break;
+    // case `multiplicacion`:
+    //   arrayNumber.push("*");
+    //   calc.push(arrayNumber.join(""));
+    //   arrayNumber = [];
+    //   initialValueDisplay();
+    //   break;
 
     default:
-      arrayNumber.push("/");
-      arrayOperations.push(arrayNumber.join(""));
+      // arrayNumber.push("/");
+      // calc.push(arrayNumber.join(""));
       arrayNumber = [];
       initialValueDisplay();
       break;
@@ -47,18 +60,21 @@ const operations = (operacion) => {
 
 const result = () => {
   const display = document.getElementById("display");
-  arrayOperations.push(arrayNumber.join(""));
+  if (sum !== 0) {
+    calc = sum + parseFloat(arrayNumber.join(""));
 
-  let total = arrayOperations.join("");
-
-  console.log(typeof total);
-  display.innerHTML = total;
-  arrayNumber = [];
+    display.innerHTML = calc;
+    arrayNumber = [];
+    sum = 0;
+    boolSum = false;
+  } else {
+  }
 };
 
 const deleteNumbers = () => {
   arrayNumber = [];
-  arrayOperations = [];
+  calc = 0;
+  boolSum = false;
 
   initialValueDisplay();
 };
