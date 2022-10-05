@@ -18,7 +18,7 @@
           <i class="fa-solid fa-money-check-dollar logo"></i>
         </div>
         <div class="container-display">
-          <p class="display-numbers">12547854</p>
+          <p id="display" class="display-numbers"></p>
         </div>
       </div>
       <div class="container-center">
@@ -29,20 +29,20 @@
         <div>
           <div class="container-keys">
             <div class="keys">
-              <button class="math siete">7</button>
-              <button class="math ocho">8</button>
-              <button class="math nueve">9</button>
+              <button onclick="number(7)" class="math siete">7</button>
+              <button onclick="number(8)" class="math ocho">8</button>
+              <button onclick="number(9)" class="math nueve">9</button>
               <button class="math suma">+</button>
-              <button class="math cuatro">4</button>
-              <button class="math cinco">5</button>
-              <button class="math seis">6</button>
+              <button onclick="number(4)" class="math cuatro">4</button>
+              <button onclick="number(5)" class="math cinco">5</button>
+              <button onclick="number(6)" class="math seis">6</button>
               <button class="math resta">-</button>
-              <button class="math uno">1</button>
-              <button class="math dos">2</button>
-              <button class="math tres">3</button>
+              <button onclick="number(1)" class="math uno">1</button>
+              <button onclick="number(2)" class="math dos">2</button>
+              <button onclick="number(3)" class="math tres">3</button>
               <button class="math multiplicacion">*</button>
-              <button class="math reset">AC</button>
-              <button class="math cero">0</button>
+              <button onclick="deleteNumbers()" class="math reset">AC</button>
+              <button onclick="number(0)" class="math cero">0</button>
               <button class="math igual">=</button>
               <button class="math division">/</button>
             </div>
@@ -61,5 +61,7 @@
         <div class="container-footer-footer-bottom"></div>
       </div>
     </div>
+
+    <script src="/js/index.js"></script>
   </body>
 </html>
