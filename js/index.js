@@ -24,7 +24,7 @@ const operations = (operacion) => {
   switch (operacion) {
     case `suma`:
       if (substraction !== 0) {
-        substraction = mixCalc;
+        sum = mixCalc - parseFloat(arrayNumber.join(""));
       } else {
         if (sum !== 0) {
           sum = sum + parseFloat(arrayNumber.join(""));
@@ -35,7 +35,7 @@ const operations = (operacion) => {
         }
       }
 
-      mixCalc = sum + parseFloat(arrayNumber.join(""));
+      mixCalc = sum;
       arrayNumber = [];
       initialValueDisplay();
 
@@ -44,7 +44,7 @@ const operations = (operacion) => {
       break;
     case `resta`:
       if (sum !== 0) {
-        substraction = mixCalc;
+        substraction = mixCalc + parseFloat(arrayNumber.join(""));
       } else {
         if (substraction !== 0) {
           substraction = substraction - parseFloat(arrayNumber.join(""));
@@ -55,7 +55,7 @@ const operations = (operacion) => {
         }
       }
 
-      mixCalc = substraction - parseFloat(arrayNumber.join(""));
+      mixCalc = substraction;
       arrayNumber = [];
       initialValueDisplay();
 
