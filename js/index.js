@@ -4,6 +4,7 @@ const initialValueDisplay = () => {
 
 let arrayNumber = [];
 let calc = 0;
+let mixCalc = 0;
 let sum = 0;
 let substraction = 0;
 let multiplicacion = 0;
@@ -22,14 +23,19 @@ const number = (number) => {
 const operations = (operacion) => {
   switch (operacion) {
     case `suma`:
-      if (sum !== 0) {
-        sum = sum + parseFloat(arrayNumber.join(""));
+      if (substraction !== 0) {
+        substraction = mixCalc;
       } else {
-        (sum = parseFloat(arrayNumber.join("")))
-          ? Number.isNaN(parseFloat(arrayNumber.join(""))) === false
-          : (sum = calc);
+        if (sum !== 0) {
+          sum = sum + parseFloat(arrayNumber.join(""));
+        } else {
+          (sum = parseFloat(arrayNumber.join("")))
+            ? Number.isNaN(parseFloat(arrayNumber.join(""))) === false
+            : (sum = calc);
+        }
       }
 
+      mixCalc = sum + parseFloat(arrayNumber.join(""));
       arrayNumber = [];
       initialValueDisplay();
 
@@ -37,14 +43,19 @@ const operations = (operacion) => {
 
       break;
     case `resta`:
-      if (substraction !== 0) {
-        substraction = substraction - parseFloat(arrayNumber.join(""));
+      if (sum !== 0) {
+        substraction = mixCalc;
       } else {
-        (substraction = parseFloat(arrayNumber.join("")))
-          ? Number.isNaN(parseFloat(arrayNumber.join(""))) === false
-          : (substraction = calc);
+        if (substraction !== 0) {
+          substraction = substraction - parseFloat(arrayNumber.join(""));
+        } else {
+          (substraction = parseFloat(arrayNumber.join("")))
+            ? Number.isNaN(parseFloat(arrayNumber.join(""))) === false
+            : (substraction = calc);
+        }
       }
 
+      mixCalc = substraction - parseFloat(arrayNumber.join(""));
       arrayNumber = [];
       initialValueDisplay();
 
@@ -69,12 +80,14 @@ const result = () => {
     display.innerHTML = calc;
     arrayNumber = [];
     sum = 0;
+    mixCalc = 0;
   } else if (substraction !== 0) {
     calc = substraction - parseFloat(arrayNumber.join(""));
 
     display.innerHTML = calc;
     arrayNumber = [];
     substraction = 0;
+    mixCalc = 0;
   }
 };
 
@@ -84,6 +97,7 @@ const deleteNumbers = () => {
 
   sum = 0;
   substraction = 0;
+  mixCalc = 0;
 
   initialValueDisplay();
 };
