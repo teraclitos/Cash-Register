@@ -17,10 +17,10 @@ let divisionCondition = false;
 const number = (number) => {
   const display = document.getElementById("display");
   arrayNumber.push(number);
-  if (arrayNumber.length < 13) {
+  if (arrayNumber.length < 17) {
     display.innerText = `${arrayNumber.join("")}`;
   } else {
-    alert("12 cifras es el límite permitido");
+    alert("16 cifras es el límite permitido");
   }
 };
 
