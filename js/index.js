@@ -8,9 +8,6 @@ let sum = 0;
 let substraction = 0;
 let multiplicacion = 0;
 let division = 0;
-let boolSum = false;
-let otherOperationsState = 0;
-let boolSubs = false;
 
 const number = (number) => {
   const display = document.getElementById("display");
@@ -25,51 +22,31 @@ const number = (number) => {
 const operations = (operacion) => {
   switch (operacion) {
     case `suma`:
-      if (
-        otherOperationsState === 2 ||
-        otherOperationsState === 3 ||
-        otherOperationsState === 4
-      ) {
-        sum = parseFloat(arrayNumber.join("")) + calc;
-        otherOperationsState = 1;
+      if (sum !== 0) {
+        sum = sum + parseFloat(arrayNumber.join(""));
       } else {
-        if (boolSum === true) {
-          sum = sum + parseFloat(arrayNumber.join(""));
-        } else {
-          (sum = parseFloat(arrayNumber.join("")))
-            ? Number.isNaN(parseFloat(arrayNumber.join(""))) === false
-            : (sum = calc);
-        }
+        (sum = parseFloat(arrayNumber.join("")))
+          ? Number.isNaN(parseFloat(arrayNumber.join(""))) === false
+          : (sum = calc);
       }
 
       arrayNumber = [];
       initialValueDisplay();
-      boolSum = true;
 
       substraction = 0;
 
       break;
     case `resta`:
-      if (
-        otherOperationsState === 1 ||
-        otherOperationsState === 3 ||
-        otherOperationsState === 4
-      ) {
-        substraction = calc - parseFloat(arrayNumber.join(""));
-        otherOperationsState = 2;
+      if (substraction !== 0) {
+        substraction = substraction - parseFloat(arrayNumber.join(""));
       } else {
-        if (boolSubs === true) {
-          substraction = substraction - parseFloat(arrayNumber.join(""));
-        } else {
-          (substraction = parseFloat(arrayNumber.join("")))
-            ? Number.isNaN(parseFloat(arrayNumber.join(""))) === false
-            : (substraction = calc);
-        }
+        (substraction = parseFloat(arrayNumber.join("")))
+          ? Number.isNaN(parseFloat(arrayNumber.join(""))) === false
+          : (substraction = calc);
       }
 
       arrayNumber = [];
       initialValueDisplay();
-      boolSubs = true;
 
       sum = 0;
 
@@ -92,27 +69,21 @@ const result = () => {
     display.innerHTML = calc;
     arrayNumber = [];
     sum = 0;
-    boolSum = false;
-    otherOperationsState = 0;
   } else if (substraction !== 0) {
     calc = substraction - parseFloat(arrayNumber.join(""));
 
     display.innerHTML = calc;
     arrayNumber = [];
     substraction = 0;
-    boolSubs = false;
-    otherOperationsState = 0;
   }
 };
 
 const deleteNumbers = () => {
   arrayNumber = [];
   calc = 0;
-  boolSum = false;
-  boolSubs = false;
+
   sum = 0;
   substraction = 0;
-  otherOperationsState = 0;
 
   initialValueDisplay();
 };
