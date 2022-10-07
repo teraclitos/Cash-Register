@@ -25,7 +25,6 @@ const number = (number) => {
 const operations = (operacion) => {
   switch (operacion) {
     case `suma`:
-      sumRep = sum;
       if (
         otherOperationsState === 2 ||
         otherOperationsState === 3 ||
@@ -35,9 +34,9 @@ const operations = (operacion) => {
         otherOperationsState = 1;
       } else {
         if (boolSum === true) {
-          sum = sumRep + parseFloat(arrayNumber.join(""));
+          sum = sum + parseFloat(arrayNumber.join(""));
         } else {
-          (sum = calc + parseFloat(arrayNumber.join("")))
+          (sum = parseFloat(arrayNumber.join("")))
             ? Number.isNaN(parseFloat(arrayNumber.join(""))) === false
             : (sum = calc);
         }
