@@ -39,10 +39,10 @@ const operations = (operacion) => {
         } else {
           (sum = calc + parseFloat(arrayNumber.join("")))
             ? Number.isNaN(parseFloat(arrayNumber.join(""))) === false
-            : (sum = sumRep + calc);
+            : (sum = calc);
         }
       }
-      calc = sum + parseFloat(arrayNumber.join(""));
+
       arrayNumber = [];
       initialValueDisplay();
       boolSum = true;
@@ -73,7 +73,6 @@ const operations = (operacion) => {
       initialValueDisplay();
       boolSubs = true;
 
-      calc = substraction - parseFloat(arrayNumber.join(""));
       sum = 0;
 
       break;
