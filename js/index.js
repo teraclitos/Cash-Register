@@ -32,21 +32,22 @@ const operations = (operacion) => {
         otherOperationsState === 4
       ) {
         sum = parseFloat(arrayNumber.join("")) + calc;
+        otherOperationsState = 1;
       } else {
         if (boolSum === true) {
           sum = sumRep + parseFloat(arrayNumber.join(""));
         } else {
-          (sum = sumRep + calc + parseFloat(arrayNumber.join("")))
+          (sum = calc + parseFloat(arrayNumber.join("")))
             ? Number.isNaN(parseFloat(arrayNumber.join(""))) === false
             : (sum = sumRep + calc);
         }
       }
-
+      calc = sum + parseFloat(arrayNumber.join(""));
       arrayNumber = [];
       initialValueDisplay();
       boolSum = true;
-      otherOperationsState = 1;
-      calc = sum;
+
+      substraction = 0;
 
       break;
     case `resta`:
@@ -57,6 +58,7 @@ const operations = (operacion) => {
         otherOperationsState === 4
       ) {
         substraction = calc - parseFloat(arrayNumber.join(""));
+        otherOperationsState = 2;
       } else {
         if (boolSubs === true) {
           substraction = subsRep - parseFloat(arrayNumber.join(""));
@@ -70,8 +72,9 @@ const operations = (operacion) => {
       arrayNumber = [];
       initialValueDisplay();
       boolSubs = true;
-      otherOperationsState = 2;
-      calc = substraction;
+
+      calc = substraction - parseFloat(arrayNumber.join(""));
+      sum = 0;
 
       break;
 
