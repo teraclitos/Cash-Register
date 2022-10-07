@@ -9,6 +9,8 @@ let sum = 0;
 let substraction = 0;
 let multiplicacion = 0;
 let division = 0;
+let sumCondition = false;
+let substractionCondition = false;
 
 const number = (number) => {
   const display = document.getElementById("display");
@@ -23,10 +25,10 @@ const number = (number) => {
 const operations = (operacion) => {
   switch (operacion) {
     case `suma`:
-      if (substraction !== 0) {
+      if (substractionCondition === true) {
         sum = mixCalc - parseFloat(arrayNumber.join(""));
       } else {
-        if (sum !== 0) {
+        if (sumCondition === true) {
           sum = sum + parseFloat(arrayNumber.join(""));
         } else {
           (sum = parseFloat(arrayNumber.join("")))
@@ -40,13 +42,15 @@ const operations = (operacion) => {
       initialValueDisplay();
 
       substraction = 0;
+      substractionCondition = false;
+      sumCondition = true;
 
       break;
     case `resta`:
-      if (sum !== 0) {
+      if (sumCondition === true) {
         substraction = mixCalc + parseFloat(arrayNumber.join(""));
       } else {
-        if (substraction !== 0) {
+        if (substractionCondition === true) {
           substraction = substraction - parseFloat(arrayNumber.join(""));
         } else {
           (substraction = parseFloat(arrayNumber.join("")))
@@ -60,6 +64,8 @@ const operations = (operacion) => {
       initialValueDisplay();
 
       sum = 0;
+      sumCondition = false;
+      substractionCondition = true;
 
       break;
 
@@ -74,20 +80,22 @@ const operations = (operacion) => {
 
 const result = () => {
   const display = document.getElementById("display");
-  if (sum !== 0) {
+  if (sumCondition === true) {
     calc = sum + parseFloat(arrayNumber.join(""));
 
     display.innerHTML = calc;
     arrayNumber = [];
     sum = 0;
     mixCalc = 0;
-  } else if (substraction !== 0) {
+    sumCondition = false;
+  } else if (substractionCondition === true) {
     calc = substraction - parseFloat(arrayNumber.join(""));
 
     display.innerHTML = calc;
     arrayNumber = [];
     substraction = 0;
     mixCalc = 0;
+    substractionCondition = false;
   }
 };
 
@@ -98,6 +106,8 @@ const deleteNumbers = () => {
   sum = 0;
   substraction = 0;
   mixCalc = 0;
+  sumCondition = false;
+  substractionCondition = false;
 
   initialValueDisplay();
 };
