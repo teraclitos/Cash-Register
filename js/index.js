@@ -50,7 +50,6 @@ const operations = (operacion) => {
 
       break;
     case `resta`:
-      subsRep = substraction;
       if (
         otherOperationsState === 1 ||
         otherOperationsState === 3 ||
@@ -60,11 +59,11 @@ const operations = (operacion) => {
         otherOperationsState = 2;
       } else {
         if (boolSubs === true) {
-          substraction = subsRep - parseFloat(arrayNumber.join(""));
+          substraction = substraction - parseFloat(arrayNumber.join(""));
         } else {
-          (substraction = parseFloat(arrayNumber.join("")) - subsRep)
+          (substraction = parseFloat(arrayNumber.join("")))
             ? Number.isNaN(parseFloat(arrayNumber.join(""))) === false
-            : (substraction = calc - subsRep);
+            : (substraction = calc);
         }
       }
 
