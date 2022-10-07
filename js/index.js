@@ -12,6 +12,7 @@ let division = 0;
 let sumCondition = false;
 let substractionCondition = false;
 let multiplicationCondition = false;
+let divisionCondition = false;
 
 const number = (number) => {
   const display = document.getElementById("display");
@@ -30,6 +31,8 @@ const operations = (operacion) => {
         sum = mixCalc - parseFloat(arrayNumber.join(""));
       } else if (multiplicationCondition === true) {
         sum = mixCalc * parseFloat(arrayNumber.join(""));
+      } else if (divisionCondition === true) {
+        sum = mixCalc / parseFloat(arrayNumber.join(""));
       } else {
         if (sumCondition === true) {
           sum = sum + parseFloat(arrayNumber.join(""));
@@ -46,8 +49,10 @@ const operations = (operacion) => {
 
       substraction = 0;
       multiplication = 0;
+      division = 0;
       substractionCondition = false;
       multiplicationCondition = false;
+      divisionCondition = false;
       sumCondition = true;
 
       break;
@@ -56,6 +61,8 @@ const operations = (operacion) => {
         substraction = mixCalc + parseFloat(arrayNumber.join(""));
       } else if (multiplicationCondition === true) {
         substraction = mixCalc * parseFloat(arrayNumber.join(""));
+      } else if (divisionCondition === true) {
+        substraction = mixCalc / parseFloat(arrayNumber.join(""));
       } else {
         if (substractionCondition === true) {
           substraction = substraction - parseFloat(arrayNumber.join(""));
@@ -72,8 +79,10 @@ const operations = (operacion) => {
 
       sum = 0;
       multiplication = 0;
+      division = 0;
       sumCondition = false;
       multiplicationCondition = false;
+      divisionCondition = false;
       substractionCondition = true;
 
       break;
@@ -106,10 +115,33 @@ const operations = (operacion) => {
       break;
 
     default:
-      // arrayNumber.push("/");
-      // calc.push(arrayNumber.join(""));
+      if (substractionCondition === true) {
+        division = mixCalc - parseFloat(arrayNumber.join(""));
+      } else if (multiplicationCondition === true) {
+        division = mixCalc * parseFloat(arrayNumber.join(""));
+      } else if (sumCondition === true) {
+        division = mixCalc + parseFloat(arrayNumber.join(""));
+      } else {
+        if (divisionCondition === true) {
+          division = division / parseFloat(arrayNumber.join(""));
+        } else {
+          (division = parseFloat(arrayNumber.join("")))
+            ? Number.isNaN(parseFloat(arrayNumber.join(""))) === false
+            : (division = calc);
+        }
+      }
+
+      mixCalc = division;
       arrayNumber = [];
       initialValueDisplay();
+
+      substraction = 0;
+      multiplication = 0;
+      sum = 0;
+      substractionCondition = false;
+      multiplicationCondition = false;
+      sumCondition = false;
+      divisionCondition = true;
       break;
   }
 };
@@ -140,6 +172,18 @@ const result = () => {
     multiplication = 0;
     mixCalc = 0;
     multiplicationCondition = false;
+  } else {
+    if (parseFloat(arrayNumber.join("")) !== 0) {
+      calc = division / parseFloat(arrayNumber.join(""));
+
+      display.innerHTML = calc;
+      arrayNumber = [];
+      division = 0;
+      mixCalc = 0;
+      divisionCondition = false;
+    } else {
+      display.innerText = "MATH ERROR";
+    }
   }
 };
 
@@ -150,10 +194,12 @@ const deleteNumbers = () => {
   sum = 0;
   substraction = 0;
   multiplication = 0;
+  division = 0;
   mixCalc = 0;
   sumCondition = false;
   substractionCondition = false;
   multiplicationCondition = false;
+  divisionCondition = false;
 
   initialValueDisplay();
 };
