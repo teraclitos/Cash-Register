@@ -46,7 +46,7 @@ const operations = (operacion) => {
           sum = mixCalc / parseFloat(arrayNumber.join(""));
         } else {
           if (sumCondition === true) {
-            sum = sum + parseFloat(arrayNumber.join(""));
+            sum += parseFloat(arrayNumber.join(""));
           } else {
             (sum = parseFloat(arrayNumber.join("")))
               ? Number.isNaN(parseFloat(arrayNumber.join(""))) === false
@@ -76,7 +76,7 @@ const operations = (operacion) => {
           substraction = mixCalc / parseFloat(arrayNumber.join(""));
         } else {
           if (substractionCondition === true) {
-            substraction = substraction - parseFloat(arrayNumber.join(""));
+            substraction -= parseFloat(arrayNumber.join(""));
           } else {
             (substraction = parseFloat(arrayNumber.join("")))
               ? Number.isNaN(parseFloat(arrayNumber.join(""))) === false
@@ -105,7 +105,7 @@ const operations = (operacion) => {
           multiplication = mixCalc + parseFloat(arrayNumber.join(""));
         } else {
           if (multiplicationCondition === true) {
-            multiplication = multiplication * parseFloat(arrayNumber.join(""));
+            multiplication *= parseFloat(arrayNumber.join(""));
           } else if (divisionCondition === true) {
             multiplication = mixCalc / parseFloat(arrayNumber.join(""));
           } else {
@@ -136,7 +136,7 @@ const operations = (operacion) => {
           division = mixCalc + parseFloat(arrayNumber.join(""));
         } else {
           if (divisionCondition === true) {
-            division = division / parseFloat(arrayNumber.join(""));
+            division /= parseFloat(arrayNumber.join(""));
           } else {
             (division = parseFloat(arrayNumber.join("")))
               ? Number.isNaN(parseFloat(arrayNumber.join(""))) === false
