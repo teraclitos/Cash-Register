@@ -24,7 +24,7 @@ const number = (number) => {
     ) {
       display.innerText = `${arrayNumber.join("")}`;
     } else {
-      alert("Debe resetear la caja registardora");
+      alert("Debe resetear la caja registradora");
     }
   } else {
     alert("16 cifras es el límite permitido");
@@ -158,7 +158,7 @@ const operations = (operacion) => {
         break;
     }
   } else {
-    alert("Debe resetear la caja registardora");
+    alert("Debe resetear la caja registradora");
   }
 };
 
@@ -242,7 +242,7 @@ const result = () => {
       display.innerText = "SYNTAX ERROR";
     }
   } else {
-    alert("Debe resetear la caja registardora");
+    alert("Debe resetear la caja registradora");
   }
 };
 
