@@ -172,6 +172,24 @@ const result = () => {
     multiplication = 0;
     mixCalc = 0;
     multiplicationCondition = false;
+  } else if (
+    multiplicationCondition === false &&
+    divisionCondition === false &&
+    sumCondition === false &&
+    substractionCondition === false
+  ) {
+    calc = parseFloat(arrayNumber.join(""));
+    display.innerHTML = `${calc.toFixed(2)} $`;
+    arrayNumber = [];
+    sum = 0;
+    substraction = 0;
+    multiplication = 0;
+    division = 0;
+    mixCalc = 0;
+    sumCondition = false;
+    substractionCondition = false;
+    multiplicationCondition = false;
+    divisionCondition = false;
   } else {
     if (parseFloat(arrayNumber.join("")) !== 0) {
       calc = division / parseFloat(arrayNumber.join(""));
