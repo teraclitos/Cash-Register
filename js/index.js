@@ -171,7 +171,8 @@ const result = () => {
     const display = document.getElementById("display");
     if (
       sumCondition === true &&
-      Number.isNaN(parseFloat(arrayNumber.join(""))) === false
+      Number.isNaN(parseFloat(arrayNumber.join(""))) === false &&
+      Number.isNaN(parseFloat(sum)) === false
     ) {
       calc = sum + parseFloat(arrayNumber.join(""));
 
@@ -182,7 +183,8 @@ const result = () => {
       sumCondition = false;
     } else if (
       substractionCondition === true &&
-      Number.isNaN(parseFloat(arrayNumber.join(""))) === false
+      Number.isNaN(parseFloat(arrayNumber.join(""))) === false &&
+      Number.isNaN(parseFloat(substraction)) === false
     ) {
       calc = substraction - parseFloat(arrayNumber.join(""));
 
@@ -193,7 +195,8 @@ const result = () => {
       substractionCondition = false;
     } else if (
       multiplicationCondition === true &&
-      Number.isNaN(parseFloat(arrayNumber.join(""))) === false
+      Number.isNaN(parseFloat(arrayNumber.join(""))) === false &&
+      Number.isNaN(parseFloat(multiplication)) === false
     ) {
       calc = multiplication * parseFloat(arrayNumber.join(""));
 
@@ -226,7 +229,8 @@ const result = () => {
       divisionCondition = false;
     } else if (
       divisionCondition === true &&
-      Number.isNaN(parseFloat(arrayNumber.join(""))) === false
+      Number.isNaN(parseFloat(arrayNumber.join(""))) === false &&
+      Number.isNaN(parseFloat(division)) === false
     ) {
       if (parseFloat(arrayNumber.join("")) !== 0) {
         calc = division / parseFloat(arrayNumber.join(""));
