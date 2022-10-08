@@ -1,5 +1,5 @@
 const initialValueDisplay = () => {
-  document.getElementById("display").innerText = "0.00";
+  document.getElementById("display").innerText = "0.00 $";
 };
 
 let arrayNumber = [];
@@ -151,7 +151,7 @@ const result = () => {
   if (sumCondition === true) {
     calc = sum + parseFloat(arrayNumber.join(""));
 
-    display.innerHTML = calc.toFixed(2);
+    display.innerHTML = `${calc.toFixed(2)} $`;
     arrayNumber = [];
     sum = 0;
     mixCalc = 0;
@@ -159,7 +159,7 @@ const result = () => {
   } else if (substractionCondition === true) {
     calc = substraction - parseFloat(arrayNumber.join(""));
 
-    display.innerHTML = calc.toFixed(2);
+    display.innerHTML = `${calc.toFixed(2)} $`;
     arrayNumber = [];
     substraction = 0;
     mixCalc = 0;
@@ -167,7 +167,7 @@ const result = () => {
   } else if (multiplicationCondition === true) {
     calc = multiplication * parseFloat(arrayNumber.join(""));
 
-    display.innerHTML = calc.toFixed(2);
+    display.innerHTML = `${calc.toFixed(2)} $`;
     arrayNumber = [];
     multiplication = 0;
     mixCalc = 0;
@@ -176,7 +176,7 @@ const result = () => {
     if (parseFloat(arrayNumber.join("")) !== 0) {
       calc = division / parseFloat(arrayNumber.join(""));
 
-      display.innerHTML = calc.toFixed(2);
+      display.innerHTML = `${calc.toFixed(2)} $`;
       arrayNumber = [];
       division = 0;
       mixCalc = 0;
