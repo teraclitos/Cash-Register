@@ -62,6 +62,7 @@ body {
   background-color: rgb(170, 30, 30);
   color: rgb(238, 228, 228);
   border: 0.0625rem solid rgb(112, 102, 102);
+  border-radius: 0.25rem;
 }
 .reset:hover {
   background-color: rgb(175, 13, 13);
