@@ -95,6 +95,8 @@ const operations = (operacion) => {
       } else {
         if (multiplicationCondition === true) {
           multiplication = multiplication * parseFloat(arrayNumber.join(""));
+        } else if (divisionCondition === true) {
+          multiplication = mixCalc / parseFloat(arrayNumber.join(""));
         } else {
           (multiplication = parseFloat(arrayNumber.join("")))
             ? Number.isNaN(parseFloat(arrayNumber.join(""))) === false
@@ -151,7 +153,7 @@ const result = () => {
   if (sumCondition === true) {
     calc = sum + parseFloat(arrayNumber.join(""));
 
-    display.innerHTML = `${calc.toFixed(2)} $`;
+    display.innerText = `${calc.toFixed(2)} $`;
     arrayNumber = [];
     sum = 0;
     mixCalc = 0;
@@ -159,7 +161,7 @@ const result = () => {
   } else if (substractionCondition === true) {
     calc = substraction - parseFloat(arrayNumber.join(""));
 
-    display.innerHTML = `${calc.toFixed(2)} $`;
+    display.innerText = `${calc.toFixed(2)} $`;
     arrayNumber = [];
     substraction = 0;
     mixCalc = 0;
@@ -167,7 +169,7 @@ const result = () => {
   } else if (multiplicationCondition === true) {
     calc = multiplication * parseFloat(arrayNumber.join(""));
 
-    display.innerHTML = `${calc.toFixed(2)} $`;
+    display.innerText = `${calc.toFixed(2)} $`;
     arrayNumber = [];
     multiplication = 0;
     mixCalc = 0;
@@ -178,8 +180,12 @@ const result = () => {
     sumCondition === false &&
     substractionCondition === false
   ) {
-    calc = parseFloat(arrayNumber.join(""));
-    display.innerHTML = `${calc.toFixed(2)} $`;
+    if (Number.isNaN(parseFloat(arrayNumber.join(""))) === false) {
+      calc = parseFloat(arrayNumber.join(""));
+      display.innerText = `${calc.toFixed(2)} $`;
+    } else {
+      display.innerText = `${calc.toFixed(2)} $`;
+    }
     arrayNumber = [];
     sum = 0;
     substraction = 0;
@@ -194,7 +200,7 @@ const result = () => {
     if (parseFloat(arrayNumber.join("")) !== 0) {
       calc = division / parseFloat(arrayNumber.join(""));
 
-      display.innerHTML = `${calc.toFixed(2)} $`;
+      display.innerText = `${calc.toFixed(2)} $`;
       arrayNumber = [];
       division = 0;
       mixCalc = 0;
