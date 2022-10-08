@@ -32,6 +32,7 @@ const number = (number) => {
 };
 
 const operations = (operacion) => {
+  const display = document.getElementById("display");
   if (
     display.innerText !== "MATH ERROR" &&
     display.innerText !== "SYNTAX ERROR"
@@ -56,7 +57,7 @@ const operations = (operacion) => {
 
         mixCalc = sum;
         arrayNumber = [];
-        initialValueDisplay();
+        display.innerText = `+`;
 
         substraction = 0;
         multiplication = 0;
@@ -86,7 +87,7 @@ const operations = (operacion) => {
 
         mixCalc = substraction;
         arrayNumber = [];
-        initialValueDisplay();
+        display.innerText = `-`;
 
         sum = 0;
         multiplication = 0;
@@ -117,7 +118,7 @@ const operations = (operacion) => {
 
         mixCalc = multiplication;
         arrayNumber = [];
-        initialValueDisplay();
+        display.innerText = `*`;
 
         substraction = 0;
         sum = 0;
@@ -146,7 +147,7 @@ const operations = (operacion) => {
 
         mixCalc = division;
         arrayNumber = [];
-        initialValueDisplay();
+        display.innerText = `/`;
 
         substraction = 0;
         multiplication = 0;
