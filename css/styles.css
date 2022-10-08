@@ -58,6 +58,13 @@ body {
   color: rgb(219, 219, 110);
   font-size: 1.8rem;
 }
+.reset {
+  background-color: rgb(170, 30, 30);
+  color: rgb(238, 228, 228);
+}
+.reset:hover {
+  background-color: rgb(175, 13, 13);
+}
 
 .container-center {
   width: 40rem;
@@ -113,6 +120,13 @@ body {
 .math {
   font-size: 1rem;
   cursor: pointer;
+
+  outline: none;
+}
+.math:active {
+  transform: scale(0.98);
+  transition: 0.2s all;
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
 
 .container-footer-top-top {
