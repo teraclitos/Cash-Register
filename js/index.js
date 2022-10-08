@@ -237,31 +237,9 @@ const result = () => {
         divisionCondition = false;
       } else {
         display.innerText = "MATH ERROR";
-        calc = 0;
-
-        sum = 0;
-        substraction = 0;
-        multiplication = 0;
-        division = 0;
-        mixCalc = 0;
-        sumCondition = false;
-        substractionCondition = false;
-        multiplicationCondition = false;
-        divisionCondition = false;
       }
     } else {
       display.innerText = "SYNTAX ERROR";
-      calc = 0;
-
-      sum = 0;
-      substraction = 0;
-      multiplication = 0;
-      division = 0;
-      mixCalc = 0;
-      sumCondition = false;
-      substractionCondition = false;
-      multiplicationCondition = false;
-      divisionCondition = false;
     }
   } else {
     alert("Debe resetear la caja registardora");
