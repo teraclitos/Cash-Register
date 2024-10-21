@@ -29,32 +29,70 @@
         <div>
           <div class="container-keys">
             <div class="keys">
-              <button onclick="number(7)"  ontouchstart="number(7)"  class="math">7</button>
-              <button onclick="number(8)" ontouchstart="number(8)" class="math">8</button>
-              <button onclick="number(9)" ontouchstart="number(9)" class="math">9</button>
-              <button onclick="operations(`suma`)" ontouchstart="operations(`suma`)" class="math">+</button>
-              <button onclick="number(4)" ontouchstart="number(4)" class="math">4</button>
-              <button onclick="number(5)" ontouchstart="number(5)" class="math">5</button>
-              <button onclick="number(6)" ontouchstart="number(6)" class="math">6</button>
-              <button onclick="operations(`resta`)" ontouchstart="operations(`resta`)" class="math resta">
-                -
-              </button>
-              <button onclick="number(1)" ontouchstart="number(1)"  class="math u">1</button>
-              <button onclick="number(2)" ontouchstart="number(2)" class="math">2</button>
-              <button onclick="number(3)" ontouchstart="number(3)" class="math">3</button>
-              <button
-                onclick="operations(`multiplication`)"
-                ontouchstart="operations(`multiplication`)"
-                class="math multiplication"
-              >
-                *
-              </button>
-              <button onclick="reset()" ontouchstart="reset()" class="math reset">AC</button>
-              <button onclick="number(0)" ontouchstart="number(0)" class="math">0</button>
-              <button onclick="result()" ontouchstart="result()" class="math">=</button>
-              <button onclick="operations(`division`)" ontouchstart="operations(`division`)" class="math division">
-                /
-              </button>
+              <button 
+                onclick="handleClick(() => number(7))" 
+                ontouchstart="handleTouchStart(() => number(7))" 
+                class="math">7</button>
+              <button 
+                onclick="handleClick(() => number(8))" 
+                ontouchstart="handleTouchStart(() => number(8))" 
+                class="math">8</button>
+              <button 
+                onclick="handleClick(() => number(9))" 
+                ontouchstart="handleTouchStart(() => number(9))" 
+                class="math">9</button>
+              <button 
+                onclick="handleClick(() => operations(`suma`))" 
+                ontouchstart="handleTouchStart(() => operations(`suma`))" 
+                class="math">+</button>
+              <button 
+                onclick="handleClick(() => number(4))" 
+                ontouchstart="handleTouchStart(() => number(4))" 
+                class="math">4</button>
+              <button 
+                onclick="handleClick(() => number(5))" 
+                ontouchstart="handleTouchStart(() => number(5))" 
+                class="math">5</button>
+              <button 
+                onclick="handleClick(() => number(6))" 
+                ontouchstart="handleTouchStart(() => number(6))" 
+                class="math">6</button>
+              <button 
+                onclick="handleClick(() => operations(`resta`))" 
+                ontouchstart="handleTouchStart(() => operations(`resta`))" 
+                class="math resta">-</button>
+              <button 
+                onclick="handleClick(() => number(1))" 
+                ontouchstart="handleTouchStart(() => number(1))" 
+                class="math u">1</button>
+              <button 
+                onclick="handleClick(() => number(2))" 
+                ontouchstart="handleTouchStart(() => number(2))" 
+                class="math">2</button>
+              <button 
+                onclick="handleClick(() => number(3))" 
+                ontouchstart="handleTouchStart(() => number(3))" 
+                class="math">3</button>
+              <button 
+                onclick="handleClick(() => operations(`multiplication`))" 
+                ontouchstart="handleTouchStart(() => operations(`multiplication`))" 
+                class="math multiplication">*</button>
+              <button 
+                onclick="handleClick(() => reset())" 
+                ontouchstart="handleTouchStart(() => reset())" 
+                class="math reset">AC</button>
+              <button 
+                onclick="handleClick(() => number(0))" 
+                ontouchstart="handleTouchStart(() => number(0))" 
+                class="math">0</button>
+              <button 
+                onclick="handleClick(() => result())" 
+                ontouchstart="handleTouchStart(() => result())" 
+                class="math">=</button>
+              <button 
+                onclick="handleClick(() => operations(`division`))" 
+                ontouchstart="handleTouchStart(() => operations(`division`))" 
+                class="math division">/</button>
             </div>
           </div>
         </div>
@@ -73,5 +111,21 @@
     </div>
 
     <script src="/js/index.js"></script>
+
+    <script>
+      let touchEvent = false;
+
+      function handleTouchStart(callback) {
+        touchEvent = true;
+        callback();
+      }
+
+      function handleClick(callback) {
+        if (!touchEvent) {
+          callback();
+        }
+        touchEvent = false; 
+      }
+    </script>
   </body>
 </html>
