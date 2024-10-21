@@ -29,29 +29,30 @@
         <div>
           <div class="container-keys">
             <div class="keys">
-              <button onclick="number(7)" class="math">7</button>
-              <button onclick="number(8)" class="math">8</button>
-              <button onclick="number(9)" class="math">9</button>
-              <button onclick="operations(`suma`)" class="math">+</button>
-              <button onclick="number(4)" class="math">4</button>
-              <button onclick="number(5)" class="math">5</button>
-              <button onclick="number(6)" class="math">6</button>
-              <button onclick="operations(`resta`)" class="math resta">
+              <button onclick="number(7)"  ontouchstart="number(7)"  class="math">7</button>
+              <button onclick="number(8)" ontouchstart="number(8)" class="math">8</button>
+              <button onclick="number(9)" ontouchstart="number(9)" class="math">9</button>
+              <button onclick="operations(`suma`)" ontouchstart="operations(`suma`)" class="math">+</button>
+              <button onclick="number(4)" ontouchstart="number(4)" class="math">4</button>
+              <button onclick="number(5)" ontouchstart="number(5)" class="math">5</button>
+              <button onclick="number(6)" ontouchstart="number(6)" class="math">6</button>
+              <button onclick="operations(`resta`)" ontouchstart="operations(`resta`)" class="math resta">
                 -
               </button>
-              <button onclick="number(1)" class="math u">1</button>
-              <button onclick="number(2)" class="math">2</button>
-              <button onclick="number(3)" class="math">3</button>
+              <button onclick="number(1)" ontouchstart="number(1)"  class="math u">1</button>
+              <button onclick="number(2)" ontouchstart="number(2)" class="math">2</button>
+              <button onclick="number(3)" ontouchstart="number(3)" class="math">3</button>
               <button
                 onclick="operations(`multiplication`)"
+                ontouchstart="operations(`multiplication`)"
                 class="math multiplication"
               >
                 *
               </button>
-              <button onclick="reset()" class="math reset">AC</button>
-              <button onclick="number(0)" class="math">0</button>
-              <button onclick="result()" class="math">=</button>
-              <button onclick="operations(`division`)" class="math division">
+              <button onclick="reset()" ontouchstart="reset()" class="math reset">AC</button>
+              <button onclick="number(0)" ontouchstart="number(0)" class="math">0</button>
+              <button onclick="result()" ontouchstart="result()" class="math">=</button>
+              <button onclick="operations(`division`)" ontouchstart="operations(`division`)" class="math division">
                 /
               </button>
             </div>
